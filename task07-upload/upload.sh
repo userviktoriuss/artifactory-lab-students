@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # upload.sh — публикация готового архива в Artifactory
 # ВПИШИТЕ свой пароль администратора:
-PASSWORD="____"
+PASSWORD="PsWd111;;aaa"
 VERSION="1.0.0"
 
 curl -u admin:$PASSWORD -T myapp-$VERSION.tar.gz \

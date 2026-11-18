@@ -2,7 +2,7 @@
 # cleanup.sh — оставляет 2 последние версии myapp, остальные удаляет
 set -euo pipefail
 
-PASSWORD="____"   # ВПИШИТЕ пароль
+PASSWORD="PsWd111;;aaa"   # ВПИШИТЕ пароль
 REPO="myapp-local"
 ART_URL="http://localhost:8081/artifactory"
 KEEP=2
@@ -19,6 +19,6 @@ to_delete=$(echo "$versions" | head -n "$((total - KEEP))")
 
 for v in $to_delete; do
   # ВПИШИТЕ HTTP-метод удаления:
-  curl -fsS -u "admin:$PASSWORD" -X ____ -o /dev/null "$ART_URL/$REPO/myapp/$v/"
+  curl -fsS -u "admin:$PASSWORD" -X DELETE -o /dev/null "$ART_URL/$REPO/myapp/$v/"
   echo "Удалено: $v"
 done
